@@ -4,7 +4,7 @@ Qovia gives AI agents and developers one API key for public data from Chinese an
 
 - **140+ endpoints** for posts, comments, creator profiles, hot lists and search, in one JSON envelope.
 - **Remote MCP server** at `https://api.qovia.ai/mcp`, so there is nothing to install.
-- **Pay per successful call** from a prepaid balance. Empty results and errors are never charged. See [pricing](https://qovia.ai/pricing/).
+- **50 trial calls** for every new account, then **pay per successful call** from a prepaid balance. Empty results and errors are never charged. See [pricing](https://qovia.ai/pricing/).
 
 This repository holds setup instructions and examples. The service itself is hosted, and its source is not public.
 
@@ -38,7 +38,7 @@ Plus **cross-platform search** (跨域检索): one query across Weibo, Douyin, T
 
 ## 1. Get an API key
 
-Sign up at [qovia.ai](https://qovia.ai), top up your balance, and create a key at [qovia.ai/console/?tab=keys](https://qovia.ai/console/?tab=keys). Keys look like `sk-qovia-…`.
+Sign up at [qovia.ai](https://qovia.ai) and create a key at [qovia.ai/console/?tab=keys](https://qovia.ai/console/?tab=keys). Keys look like `sk-qovia-…`. A new account comes with 50 trial calls; top up when they run out.
 
 ## 2. Connect your MCP client
 

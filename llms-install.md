@@ -2,7 +2,7 @@
 
 Qovia is a remote MCP server over Streamable HTTP. Nothing needs to be downloaded or built.
 
-1. Ask the user for their Qovia API key. It starts with `sk-qovia-`. If they don't have one, they create it at https://qovia.ai/console/?tab=keys after signing up and topping up. Never invent a key.
+1. Ask the user for their Qovia API key. It starts with `sk-qovia-`. If they don't have one, they create it at https://qovia.ai/console/?tab=keys after signing up; a new account includes 50 trial calls. Never invent a key.
 2. Add the server to the client's MCP settings.
    - Clients that support remote HTTP servers with headers:
      ```json
@@ -31,6 +31,6 @@ Qovia is a remote MCP server over Streamable HTTP. Nothing needs to be downloade
 3. Check the connection: call `get_account`. It returns the balance, plan and rate limit and is not charged. `search_endpoints` works even without a key.
 
 Notes:
-- Calls are billed per successful, non-empty result from the user's prepaid balance; every `call_endpoint` result reports `charged_usd`.
+- The first 50 successful calls of a new account are a trial; after that, calls are billed per successful, non-empty result from the user's prepaid balance. Every `call_endpoint` result reports `charged_usd`.
 - On HTTP 429, wait for the `Retry-After` seconds before retrying.
 - Docs: https://qovia.ai/docs/mcp/
