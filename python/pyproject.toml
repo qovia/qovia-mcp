@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qovia"
+version = "0.1.0"
+description = "Python client for Qovia: public data from Douyin, Xiaohongshu (RedNote), Weibo, Bilibili, TikTok, YouTube and 20+ platforms as unified JSON"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Qovia", email = "scott@qovia.ai" }]
+keywords = ["qovia", "douyin", "xiaohongshu", "rednote", "weibo", "bilibili", "tiktok", "social media", "api", "mcp"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Internet :: WWW/HTTP",
+]
+
+[project.urls]
+Homepage = "https://qovia.ai"
+Documentation = "https://qovia.ai/docs/"
+Source = "https://github.com/qovia/qovia-mcp"
+
+[tool.setuptools]
+packages = ["qovia"]
