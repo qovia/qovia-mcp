@@ -29,7 +29,7 @@ class Handler(BaseHTTPRequestHandler):
                                {"Retry-After": "0"})
         if self.path.startswith("/v1/missing"):
             return self._reply(400, {"error": {"code": "invalid_params", "message": "bad", "request_id": "r1",
-                                               "support": "https://t.me/wodaemn"}})
+                                               "support": "https://t.me/scott10081"}})
         page = int(self.path.split("page=")[1]) if "page=" in self.path else 1
         return self._reply(200, {"request_id": "r2", "data": {"items": [page], "has_more": page < 3},
                                  "meta": {"billed": True, "charged_usd": "0.005000", "empty": False}})
