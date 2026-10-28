@@ -1,0 +1,93 @@
+{
+  "captured_at": "2026-10-28",
+  "how": "POST https://api.qovia.ai/mcp with the JSON-RPC methods initialize and tools/list, no API key. The live response is authoritative; this file is a convenience copy for reviewers.",
+  "initialize": {
+    "protocolVersion": "2025-06-18",
+    "serverInfo": {
+      "name": "qovia",
+      "version": "0.1.0",
+      "websiteUrl": "https://qovia.ai/docs/mcp/"
+    },
+    "capabilities": {
+      "experimental": {},
+      "tools": {
+        "listChanged": false
+      }
+    },
+    "instructions": "Qovia returns public web data (Douyin, Xiaohongshu (RedNote), Bilibili, Tieba, Taobao, Fliggy and more) as JSON; posts, notes and videos share one record shape across platforms. Find an endpoint with search_endpoints, read its parameters with get_endpoint, then run it with call_endpoint. Only successful, non-empty results are billed (the price is listed per endpoint); empty results and failures are not charged. Finding and describing endpoints needs no key; running one, and get_account, need the user's Qovia API key (Authorization: Bearer sk-qovia-…) on this MCP connection."
+  },
+  "tools": [
+    {
+      "name": "search_endpoints",
+      "description": "Search Qovia's data endpoints by keyword (Chinese or English) and/or platform slug (douyin, tiktok, xiaohongshu, pgy, bilibili, tieba, wechat, taobao, jd, fliggy, xingtu, huahuo, cljx, ...). Returns ids, titles, price per call and whether each endpoint is live. Not charged, no API key needed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Words in the id, path or title"
+          },
+          "platform": {
+            "type": "string",
+            "maxLength": 50,
+            "description": "Platform slug"
+          },
+          "include_unavailable": {
+            "type": "boolean",
+            "default": false,
+            "description": "Also list endpoints that are not live yet"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_endpoint",
+      "description": "Show one endpoint: what it returns, its parameters (JSON Schema), example parameters, a response example and the price. Not charged, no API key needed.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "endpoint_id"
+        ],
+        "properties": {
+          "endpoint_id": {
+            "type": "string",
+            "description": "e.g. raw.douyin.video"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "call_endpoint",
+      "description": "Run an endpoint and return its data plus billing meta (charged_usd, balance_usd). Billed only when it returns data; empty results and failures are not charged. Needs the user's API key.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "endpoint_id"
+        ],
+        "properties": {
+          "endpoint_id": {
+            "type": "string",
+            "description": "e.g. raw.douyin.video"
+          },
+          "params": {
+            "type": "object",
+            "description": "The endpoint's parameters (see get_endpoint)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_account",
+      "description": "Check the API key: balance, plan and rate limit. Not charged; counts toward the rate limit.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    }
+  ]
+}
