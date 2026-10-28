@@ -1,0 +1,41 @@
+{
+  "name": "qovia",
+  "description": "Hosted MCP server for public data from 20+ platforms, including Douyin, Xiaohongshu (RedNote), Weibo, Bilibili, TikTok, YouTube, X and Reddit, as structured JSON. Search the endpoint catalog without a key; add your Qovia API key to run calls.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Qovia",
+    "url": "https://qovia.ai"
+  },
+  "homepage": "https://qovia.ai",
+  "repository": "https://github.com/qovia/qovia-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "social-media",
+    "china",
+    "douyin",
+    "xiaohongshu",
+    "rednote",
+    "weibo",
+    "bilibili",
+    "tiktok",
+    "youtube",
+    "reddit",
+    "public-data",
+    "api"
+  ],
+  "logo": "assets/logo-400.png",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "QOVIA_API_KEY": {
+        "type": "string",
+        "title": "Qovia API key",
+        "description": "Create a key at https://qovia.ai/console/?tab=keys (it starts with sk-qovia-)."
+      }
+    },
+    "required": [
+      "QOVIA_API_KEY"
+    ]
+  }
+}
