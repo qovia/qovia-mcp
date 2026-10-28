@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 DEFAULT_BASE_URL = "https://api.qovia.ai"
-USER_AGENT = "qovia-python/0.1.0"
+USER_AGENT = "qovia-python/0.1.1"
 
 
 class QoviaError(Exception):

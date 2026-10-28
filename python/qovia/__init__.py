@@ -12,4 +12,4 @@
 from qovia.client import Qovia, QoviaError, Response
 
 __all__ = ["Qovia", "QoviaError", "Response"]
-__version__ = "0.1.0"
+__version__ = "0.1.1"
