@@ -1,0 +1,36 @@
+{
+  "name": "qovia",
+  "displayName": "Qovia",
+  "version": "0.1.0",
+  "description": "Public posts, comments, creator profiles and hot lists from 20+ platforms, including Douyin, Xiaohongshu, Weibo, Bilibili, TikTok and YouTube, as structured JSON, through the hosted Qovia MCP server.",
+  "author": {
+    "name": "Qovia",
+    "email": "scott@qovia.ai",
+    "url": "https://qovia.ai"
+  },
+  "homepage": "https://qovia.ai/docs/mcp/",
+  "repository": "https://github.com/qovia/qovia-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "social-media", "douyin", "xiaohongshu", "weibo", "bilibili", "tiktok", "web-data", "api"],
+  "documentationUrl": "https://qovia.ai/docs/mcp/",
+  "supportUrl": "https://qovia.ai/contact/",
+  "privacyPolicyUrl": "https://qovia.ai/privacy/",
+  "termsOfServiceUrl": "https://qovia.ai/terms/",
+  "userConfig": {
+    "qovia_api_key": {
+      "type": "string",
+      "title": "Qovia API key",
+      "description": "Create a key at https://qovia.ai/console/?tab=keys (it starts with sk-qovia-). Without a key only the catalog tools work.",
+      "sensitive": true
+    }
+  },
+  "mcpServers": {
+    "qovia": {
+      "type": "http",
+      "url": "https://api.qovia.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.qovia_api_key}"
+      }
+    }
+  }
+}

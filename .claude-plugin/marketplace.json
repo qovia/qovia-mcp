@@ -1,0 +1,18 @@
+{
+  "name": "qovia",
+  "owner": {
+    "name": "Qovia",
+    "email": "scott@qovia.ai",
+    "url": "https://qovia.ai"
+  },
+  "description": "Qovia plugins for Claude Code: public data from 20+ platforms, including Douyin, Xiaohongshu, Weibo, Bilibili and TikTok.",
+  "plugins": [
+    {
+      "name": "qovia",
+      "source": "./",
+      "description": "Public posts, comments, creator profiles and hot lists from 20+ platforms, including Douyin, Xiaohongshu, Weibo, Bilibili, TikTok and YouTube, as structured JSON, through the hosted Qovia MCP server.",
+      "category": "data",
+      "tags": ["mcp", "social-media", "web-data"]
+    }
+  ]
+}
