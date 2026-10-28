@@ -1,0 +1,23 @@
+{
+  "name": "qovia",
+  "version": "0.1.0",
+  "description": "Public posts, comments, creator profiles and hot lists from 20+ platforms, including Douyin, Xiaohongshu, Weibo, Bilibili, TikTok and YouTube, as structured JSON, through the hosted Qovia MCP server.",
+  "contextFileName": "GEMINI.md",
+  "settings": [
+    {
+      "name": "Qovia API key",
+      "description": "Create a key at https://qovia.ai/console/?tab=keys (it starts with sk-qovia-). Without a key only the catalog tools work.",
+      "envVar": "QOVIA_API_KEY",
+      "sensitive": true
+    }
+  ],
+  "mcpServers": {
+    "qovia": {
+      "description": "Qovia: public data from Chinese and global platforms as structured JSON.",
+      "httpUrl": "https://api.qovia.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${QOVIA_API_KEY}"
+      }
+    }
+  }
+}

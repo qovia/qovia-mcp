@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "qovia": {
+      "url": "https://api.qovia.ai/mcp",
+      "headers": { "Authorization": "Bearer ${QOVIA_API_KEY}" }
+    }
+  }
+}
